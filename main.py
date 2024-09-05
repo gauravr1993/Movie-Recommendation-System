@@ -8,17 +8,25 @@ st.set_page_config(layout="wide")
 
 apiKey = "23e8d4aac45b466a04e37b74f573a2bf"
 
-mapping = pd.read_csv('links_small.csv')
+mapping = pd.read_csv('dataset/links_small.csv')
 
-movies = pickle.load(open('models/movie_info.pkl','rb'))
+movies = pickle.load(open('saved_models/movie_info.pkl', 'rb'))
 movies_list = movies['title'].values
 
-similarity = pickle.load(open('models/similarity_matrix.pkl', 'rb'))
-ratings = pickle.load(open('models/ratings_info.pkl', 'rb'))
-svd = pickle.load(open('models/svd_model.pkl', 'rb'))
-popular = pickle.load(open('models/top_movies.pkl', 'rb'))
+print(len(movies_list))
+
+similarity = pickle.load(open('saved_models/similarity_matrix.pkl', 'rb'))
+ratings = pickle.load(open('saved_models/ratings_info.pkl', 'rb'))
+svd = pickle.load(open('saved_models/svd_model.pkl', 'rb'))
+popular = pickle.load(open('saved_models/top_movies.pkl', 'rb'))
 
 users_list = ratings.userId.unique()
+
+genres_list = ['Animation','Comedy''Family','Adventure','Fantasy','Romance','Drama','Action','Crime','Thriller','Horror','History','ScienceFiction','Mystery','War','Foreign','Music','Documentary','Western']
+
+selected_genres = st.multiselect("Choose 5 genres to get started?", genres_list)
+
+print(selected_genres)
 
 selected_user = st.selectbox("Select the user?", users_list)
 
