@@ -13,8 +13,6 @@ mapping = pd.read_csv('dataset/links_small.csv')
 movies = pickle.load(open('saved_models/movie_info.pkl', 'rb'))
 movies_list = movies['title'].values
 
-print(len(movies_list))
-
 similarity = pickle.load(open('saved_models/similarity_matrix.pkl', 'rb'))
 ratings = pickle.load(open('saved_models/ratings_info.pkl', 'rb'))
 svd = pickle.load(open('saved_models/svd_model.pkl', 'rb'))
@@ -25,8 +23,6 @@ users_list = ratings.userId.unique()
 genres_list = ['Animation','Comedy''Family','Adventure','Fantasy','Romance','Drama','Action','Crime','Thriller','Horror','History','ScienceFiction','Mystery','War','Foreign','Music','Documentary','Western']
 
 selected_genres = st.multiselect("Choose 5 genres to get started?", genres_list)
-
-print(selected_genres)
 
 selected_user = st.selectbox("Select the user?", users_list)
 
