@@ -29,6 +29,8 @@ sentence_embeddings = pickle.load(open('saved_models/sentence_embeddings.pkl', '
 
 users_list = ratings.userId.unique()
 
+print(users_list)
+
 genres_list = ['Animation','Comedy','Family','Adventure','Fantasy','Romance','Drama','Action','Crime','Thriller','Horror','History','ScienceFiction','Mystery','War','Foreign','Music','Documentary','Western']
 
 selected_genres = st.multiselect("Choose 5 genres to get started?", genres_list)
