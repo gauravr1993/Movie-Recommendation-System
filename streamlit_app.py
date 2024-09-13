@@ -12,8 +12,9 @@ username = st.text_input("User ID")
 password = st.text_input("Password", type="password")
 
 if st.button("Log in", type="primary"):
-    if username in str(range(1, 672)) and password == "test":
+    if username in map(str, range(1, 672)) and password == "test":
         st.session_state.logged_in = True
+        st.session_state['username'] = username
         st.success("Logged in successfully!")
         sleep(0.5)
         st.switch_page("pages/page1.py")

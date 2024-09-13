@@ -21,8 +21,9 @@ def make_sidebar():
         st.write("")
 
         if st.session_state.get("logged_in", False):
-            st.page_link("pages/page1.py", label="Genre Based Movie Selection", icon="🔒")
-            st.page_link("pages/page2.py", label="Content based and Collaborative Filtering", icon="🕵️")
+            st.page_link("pages/page1.py", label="Genre Based Movie Selection")
+            st.page_link("pages/page2.py", label="Content based")
+            st.page_link("pages/page3.py", label="Collaborative filtering")
 
             st.write("")
             st.write("")
